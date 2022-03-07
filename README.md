@@ -4,6 +4,9 @@
 ## Installation
 You can get the compiled .phar file on poggit by clicking [here](https://poggit.pmmp.io/ci/Eric-pm-pl/LibEconomy/~).
 
+## Supports
+Currently this library only supports BedrockEconomy and EconomyAPI
+
 ## Usage
 LibEconomy makes using the economy plugins API easier!.
 
