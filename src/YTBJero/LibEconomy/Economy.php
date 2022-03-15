@@ -26,6 +26,7 @@ final class Economy{
 				return [self::BEDROCKECONOMYAPI, $api];
 			}
 		}
+        	throw new \Exception("You not have economy plugin.");
 	}
 	/**
 	 * @param  Player $player
