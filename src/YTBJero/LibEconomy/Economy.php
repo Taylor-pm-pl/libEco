@@ -16,7 +16,7 @@ final class Economy{
 	/**
 	 * @return array
 	 */
-	private function getEconomy(){
+	private function getEconomy(): array{
 		$api = PMServer::getInstance()->getPluginManager()->getPlugin("EconomyAPI");
 		if($api !== null){
 			return [self::ECONOMYAPI, $api];
