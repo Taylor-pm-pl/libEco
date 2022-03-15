@@ -45,7 +45,7 @@ final class Economy{
 		if($this->getEconomy()[0] === self::ECONOMYAPI){
 			$this->getEconomy()[1]->addMoney($player, $amount);
 		} elseif($this->getEconomy()[0] === self::BEDROCKECONOMYAPI){
-			return $this->getEconomy()[1]->getAPI()->addToPlayerBalance($player->getName(), (int) ceil($money));
+			return $this->getEconomy()[1]->getAPI()->addToPlayerBalance($player->getName(), (int) ceil($amount));
 		}
 	}
 	/**
@@ -56,7 +56,7 @@ final class Economy{
 		if($this->getEconomy()[0] === self::ECONOMYAPI){
 			$this->getEconomy()[1]->reduceMoney($player, $amount);
 		} elseif($this->getEconomy()[0] === self::BEDROCKECONOMYAPI){
-			return $this->getEconomy()[1]->getAPI()->subtractFromPlayerBalance($player->getName(), (int) ceil($money));
+			return $this->getEconomy()[1]->getAPI()->subtractFromPlayerBalance($player->getName(), (int) ceil($amount));
 		}
 	}
 }
