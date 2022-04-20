@@ -52,7 +52,7 @@ final class Economy{
 	 */
 	public static function addMoney(Player $player, $amount){
 		Capital::api("0.1.0", function(Capital $api) {
-      		$this->selector = $api->completeConfig($this->getConfig()->get("selector"));
+      		$this->selector = $api->completeConfig(["unknown"]);
     		});
 		
 		if($this->getEconomy()[0] === self::ECONOMYAPI){
@@ -77,7 +77,7 @@ final class Economy{
 	 */
 	public static function reduceMoney(Player $player, $amount){
 		Capital::api("0.1.0", function(Capital $api) {
-      		$this->selector = $api->completeConfig($this->getConfig()->get("selector"));
+      		$this->selector = $api->completeConfig(["unknown"]);
     		});
 		if($this->getEconomy()[0] === self::ECONOMYAPI){
 			$this->getEconomy()[1]->reduceMoney($player, $amount);
