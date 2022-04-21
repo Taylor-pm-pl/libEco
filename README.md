@@ -1,8 +1,8 @@
-# LibEconomy
-**LibEconomy is a PocketMine-MP virion that makes easy to use API of economy plugins!**
+# libEco
+**libEco is a PocketMine-MP virion that makes easy to use API of economy plugins!**
 
 ## Installation
-You can get the compiled .phar file on poggit by clicking [here](https://poggit.pmmp.io/ci/Eric-pm-pl/LibEconomy/~).
+You can get the compiled .phar file on poggit by clicking [here](https://poggit.pmmp.io/ci/David-pm-pl/libEco/~).
 
 ## Supports
 Currently this library only supports BedrockEconomy and EconomyAPI.
@@ -13,19 +13,19 @@ LibEconomy makes using the economy plugins API easier!.
 ## Get the money of a player
 
 ```php
-use YTBJero\LibEconomy\Economy;
-Economy::myMoney($player);
+use davidglitch04\libEco\libEco;
+libEco::myMoney($player);
 ```
 ## Add the money of a player
 
 ```php
-use YTBJero\LibEconomy\Economy;
-Economy::addMoney($player, $amount);
+use davidglitch04\libEco\libEco;
+libEco::addMoney($player, $amount);
 ```
 
 ## Reduce the money of a player
 
 ```php
-use YTBJero\LibEconomy\Economy;
-Economy::reduceMoney($player, $amount);
+use davidglitch04\libEco\libEco;
+libEco::reduceMoney($player, $amount);
 ```
