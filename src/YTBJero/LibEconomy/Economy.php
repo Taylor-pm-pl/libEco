@@ -34,6 +34,7 @@ final class Economy{
 				if($api !== null){
 					return [self::CAPITAL, $api];
 				} 
+			}
 		}
 	}
 	/**
