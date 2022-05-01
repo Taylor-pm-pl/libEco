@@ -29,9 +29,9 @@ final class libEco {
 	 * @param  Player $player
 	 * @return int
 	 */
-	public static function myMoney(Player $player): int{
+	public static function myMoney(Player $player): float{
 		if (self::getEconomy()[0] === Utils::ECONOMYAPI){
-			return self::getEconomy()[1]->myMoney($player);
+			return (float)self::getEconomy()[1]->myMoney($player);
 		} elseif (self::getEconomy()[0] === Utils::BEDROCKECONOMYAPI){
 			$value = 0;
 			self::getEconomy()[1]->getAPI()->getPlayerBalance(
@@ -42,7 +42,7 @@ final class libEco {
 					},
 				)
 			);
-			return $value;
+			return (float)$value;
 		}
 	}
 	/**
