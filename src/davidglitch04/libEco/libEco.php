@@ -32,7 +32,14 @@ final class libEco {
 		if (self::getEconomy()[0] === Utils::ECONOMYAPI){
 			return self::getEconomy()[1]->myMoney($player);
 		} elseif (self::getEconomy()[0] === Utils::BEDROCKECONOMYAPI){
-			return self::getEconomy()[1]->getAPI()->getPlayerBalance($player->getName());
+			self::getEconomy()[0]->getAPI()->getPlayerBalance(
+				$player->getName(),
+				ClosureContext::create(
+					function (?int $balance) : void{
+						return $balance;
+					},
+				)
+			);
 		}
 	}
 	/**
@@ -44,7 +51,7 @@ final class libEco {
 		if(self::getEconomy()[0] === Utils::ECONOMYAPI){
 			self::getEconomy()[1]->addMoney($player, $amount);
 		} elseif(self::getEconomy()[0] === Utils::BEDROCKECONOMYAPI){
-			self::getEconomy()[1]->getAPI()->addToPlayerBalance($player->getName(), (int) ceil($amount));
+			self::getEconomy()[1]->getAPI()->addToPlayerBalance($player->getName(), (int)$amount);
 		}
 	}
 	/**
@@ -56,7 +63,7 @@ final class libEco {
 		if(self::getEconomy()[0] === Utils::ECONOMYAPI){
 			self::getEconomy()[1]->reduceMoney($player, $amount);
 		} elseif(self::getEconomy()[0] === Utils::BEDROCKECONOMYAPI){
-			self::getEconomy()[1]->getAPI()->subtractFromPlayerBalance($player->getName(), (int) ceil($amount));
+			self::getEconomy()[1]->getAPI()->subtractFromPlayerBalance($player->getName(), (int)$amount);
 		}
 	}
 }
