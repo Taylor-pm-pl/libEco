@@ -7,7 +7,7 @@ namespace davidglitch04\libEco;
 use davidglitch04\libEco\Utils\Utils;
 use pocketmine\Server as PMServer;
 use pocketmine\player\Player;
-use cooldogedev\libSQL\context\ClosureContext;
+use cooldogedev\BedrockEconomy\libs\cooldogedev\libSQL\context\ClosureContext;
 
 final class libEco {
 
