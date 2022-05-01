@@ -32,14 +32,16 @@ final class libEco {
 		if (self::getEconomy()[0] === Utils::ECONOMYAPI){
 			return self::getEconomy()[1]->myMoney($player);
 		} elseif (self::getEconomy()[0] === Utils::BEDROCKECONOMYAPI){
+			$value = 0;
 			self::getEconomy()[0]->getAPI()->getPlayerBalance(
 				$player->getName(),
 				ClosureContext::create(
 					function (?int $balance) : void{
-						return $balance;
+						$value = $balance;
 					},
 				)
 			);
+			return $value;
 		}
 	}
 	/**
