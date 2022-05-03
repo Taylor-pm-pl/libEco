@@ -14,7 +14,9 @@ LibEconomy makes using the economy plugins API easier!.
 
 ```php
 use davidglitch04\libEco\libEco;
-libEco::myMoney($player);
+libEco::myMoney($player, static function(float $money) : void {
+	var_dump($money);
+});
 ```
 ## Add the money of a player
 
@@ -27,5 +29,11 @@ libEco::addMoney($player, $amount);
 
 ```php
 use davidglitch04\libEco\libEco;
-libEco::reduceMoney($player, $amount);
+libEco::reduceMoney($player, $amount, static function(bool $success) : void {
+	if($success){
+		//TODO IF SUCCESS
+	} else{
+		//TODO IF FAIL
+	}
+});
 ```
