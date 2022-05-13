@@ -18,14 +18,16 @@ final class libEco
      */
     private static function getEconomy(): array
     {
-        $api = PMServer::getInstance()->getPluginManager()->getPlugin('EconomyAPI');
-        if ($api !== null) {
-            return [Utils::ECONOMYAPI, $api];
-        } else {
-            $api = PMServer::getInstance()->getPluginManager()->getPlugin('BedrockEconomy');
-            if ($api !== null) {
-                return [Utils::BEDROCKECONOMYAPI, $api];
-            }
+        $plmg = PMServer::getInstance()->getPluginManager();
+        return [Utils::ECONOMYAPI, $plmg->getPlugin('EconomyAPI')] ?? [Utils::BEDROCKECONOMYAPI, $plmg->getPlugin('BedrockEconomy')] ?? [null];
+    }
+    
+    public function isInstall(): bool
+    {
+        if(!is_null($this->getEconomy()[0]){
+            return true;
+        } else{
+            return false;
         }
     }
 
