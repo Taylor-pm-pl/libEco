@@ -33,11 +33,7 @@ final class libEco
     
     public function isInstall(): bool
     {
-        if(!is_null($this->getEconomy()[0])){
-            return true;
-        } else{
-            return false;
-        }
+        return !is_null($this->getEconomy()[0]);
     }
 
     /**
